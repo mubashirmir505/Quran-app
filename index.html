@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#073d32">
+  <meta name="description" content="A peaceful Quran reading experience with Arabic, Urdu and English translations.">
+  <title>The Quran — Read. Reflect. Remember.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="The Quran home">
+      <span class="brand-mark">۞</span><span><b>THE QURAN</b><small>READ · REFLECT · REMEMBER</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Home</a><a class="nav-link" href="#reader">Read Quran</a><a class="nav-link" href="#bookmarks">Bookmarks</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">☼</button>
+      <button class="profile-chip" id="continueTop"><span class="profile-dot">✦</span><span>Continue reading</span></button>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR DAILY MOMENT OF PEACE</div>
+        <h1>Find peace in<br>every <em>Ayah.</em></h1>
+        <p class="hero-description">Reconnect with the words of Allah. Read, listen, and reflect — wherever your day takes you.</p>
+        <div class="hero-actions"><button class="button button-gold" id="startReading">Start reading <span>↗</span></button><button class="button button-quiet" id="jumpBookmarks">♡ &nbsp; My bookmarks</button></div>
+        <div class="hero-stats"><div><strong>114</strong><span>Surahs</span></div><i></i><div><strong>6,236</strong><span>Ayahs*</span></div><i></i><div><strong>∞</strong><span>Reflections</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="Decorative Islamic geometry">
+        <div class="art-halo"></div><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+        <div class="art-medallion"><div class="medallion-inner"><span class="medallion-star">۞</span><span class="medallion-arabic">الْقُرْآنُ الْكَرِيمُ</span><span class="medallion-label">AL-QURAN AL-KAREEM</span></div></div>
+        <span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span><span class="art-spark spark-three">✦</span>
+        <div class="art-caption"><span class="caption-icon">☾</span><span><b>A light for the heart</b><small>Let every verse guide you</small></span></div>
+      </div>
+    </section>
+
+    <section class="daily-card">
+      <div class="daily-symbol">۞</div><div class="daily-content"><div class="section-kicker">A MOMENT TO REFLECT <span class="gold-dash"></span></div><div class="daily-ayah" dir="rtl">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</div><p>“For indeed, with hardship comes ease.”</p><small>Surah Ash-Sharh · 94:5</small></div>
+      <button class="round-arrow" id="dailyBookmark" aria-label="Bookmark daily verse">♡</button>
+    </section>
+
+    <section class="reader-section" id="reader">
+      <div class="section-heading"><div><div class="section-kicker">YOUR READING SPACE</div><h2>Continue your <em>journey.</em></h2></div><span class="subtle-note">A little every day goes a long way.</span></div>
+      <div class="reader-layout">
+        <aside class="surah-panel">
+          <div class="panel-heading"><div><h3>Surah index</h3><p>Explore the Holy Quran</p></div><span class="surah-count">114</span></div>
+          <label class="search-box"><span>⌕</span><input id="surahSearch" type="search" placeholder="Search Surah..." autocomplete="off"><kbd>/</kbd></label>
+          <div class="surah-list" id="surahList" aria-label="Surah list"><div class="loading">Loading Surahs…</div></div>
+        </aside>
+        <section class="quran-panel" aria-label="Quran reader">
+          <div class="reader-toolbar">
+            <div class="surah-title-wrap"><span class="surah-emblem">۞</span><div><h3 id="currentSurahName">Al-Fatihah</h3><p id="currentSurahMeta">The Opening · 7 Ayahs</p></div></div>
+            <div class="toolbar-actions"><button class="small-icon" id="fontMinus" aria-label="Decrease font size">A−</button><button class="small-icon" id="fontPlus" aria-label="Increase font size">A+</button><button class="small-icon" id="readerBookmark" title="Bookmark current verse" aria-label="Bookmark current verse">♡</button></div>
+          </div>
+          <div class="reader-controls">
+            <label class="select-wrap"><span>Translation</span><select id="translationSelect"><option value="urdu">Urdu</option><option value="english">English</option><option value="both" selected>Urdu + English</option></select></label>
+            <div class="select-wrap reciter-fixed"><span>Reciter</span><strong>Mishary Rashid Alafasy</strong></div>
+          </div>
+          <div class="surah-player" id="surahPlayer"><div class="surah-player-copy"><b id="surahPlayerTitle">Play full Surah</b><small id="surahPlayerStatus">One tap plays the entire Surah continuously</small></div><button class="button button-gold" id="playSurah" type="button" aria-label="Play full Surah">▶ Play Full Surah</button></div>
+          <div class="bismillah" id="bismillah" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <div class="ayah-list" id="ayahList"><div class="empty-reader">Choose a Surah to begin reading.</div></div>
+          <div class="reader-pagination"><button class="button button-outline" id="prevSurah">← Previous</button><span id="readerProgress">Surah 1 of 114</span><button class="button button-outline" id="nextSurah">Next →</button></div>
+          <p class="source-note">Quran text, translations and audio are loaded from AlQuran Cloud API when online.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="bookmarks-section" id="bookmarks">
+      <div class="section-heading"><div><div class="section-kicker">SAVE WHAT MOVES YOU</div><h2>Your <em>bookmarks.</em></h2></div><button class="text-button" id="clearBookmarks">Clear all <span>↗</span></button></div>
+      <div class="bookmark-grid" id="bookmarkGrid"><div class="bookmark-empty"><span>♡</span><b>Your saved Ayahs will appear here</b><p>Tap the heart beside any verse to keep it close.</p></div></div>
+    </section>
+    <footer><a class="brand footer-brand" href="#"><span class="brand-mark">۞</span><span><b>THE QURAN</b><small>READ · REFLECT · REMEMBER</small></span></a><p>Made for moments of reflection. <span>✦</span></p><small class="footer-note">*Ayah count can vary by counting tradition.</small></footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <audio id="audioPlayer" preload="none"></audio>
+  <script src="js/app.js"></script>
+</body>
+</html>
